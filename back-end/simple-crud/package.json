@@ -1,0 +1,19 @@
+{
+  "name": "simple-crud",
+  "version": "1.0.0",
+  "description": "simple crud using mongodb and typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m3llad0/TC3005.git"
+  },
+  "author": "Diego Mellado Oliveros",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m3llad0/TC3005/issues"
+  },
+  "homepage": "https://github.com/m3llad0/TC3005#readme"
+}
