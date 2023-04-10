@@ -1,0 +1,10 @@
+.price{
+    -webkit-text-size-adjust: 100%;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    font-weight: 400!important;
+    font-style: normal!important;
+    text-transform: none!important;
+    color: #ce6616;
+    font-size: 20px;
+    box-sizing: border-box;
+}

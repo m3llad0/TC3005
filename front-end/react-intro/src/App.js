@@ -1,10 +1,42 @@
-import Title from "./components/Title";
+import Wrapper from "./components/Wrapper";
+import Alexa from './images/alexa.jpg'
 
 function App() {
   return (
-    <>
-    <Title title = "Día del taco: ¿Cuándo y por qué se celebra en México?"/>
-    </>
+    <div>
+      <Wrapper
+      elements = {{
+        image: Alexa,
+        title: "Echo Dot (3ra generación) - Bocina inteligente con Alexa",
+        calification: "(192,532)",
+        price: "$999.99 mxn"
+
+      }}/>
+          <Wrapper
+      elements = {{
+        image: Alexa,
+        title: "Echo Dot (3ra generación) - Bocina inteligente con Alexa",
+        calification: "(192,532)",
+        price: "$999.99 mxn"
+
+      }}/>
+          <Wrapper
+      elements = {{
+        image: Alexa,
+        title: "Echo Dot (3ra generación) - Bocina inteligente con Alexa",
+        calification: "(192,532)",
+        price: "$999.99 mxn"
+
+      }}/>
+          <Wrapper
+      elements = {{
+        image: Alexa,
+        title: "Echo Dot (3ra generación) - Bocina inteligente con Alexa",
+        calification: "(192,532)",
+        price: "$999.99 mxn"
+
+      }}/>
+    </div>
   );
 }
 
