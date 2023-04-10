@@ -1,0 +1,37 @@
+{
+  "name": "ts-backend",
+  "version": "1.0.0",
+  "description": "backend with sql using typescript and mysql",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node dist/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m3llad0/TC3005.git"
+  },
+  "keywords": [
+    "mysql",
+    "typescript",
+    "api"
+  ],
+  "author": "Diego Mellado Oliveros",
+  "tutorial": "https://livecodestream.dev/post/your-guide-to-building-a-nodejs-typescript-rest-api-with-mysql/",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m3llad0/TC3005/issues"
+  },
+  "homepage": "https://github.com/m3llad0/TC3005#readme",
+  "dependencies": {
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.17",
+    "@types/mysql": "^2.15.21",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mysql2": "^3.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}
