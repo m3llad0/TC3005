@@ -10,7 +10,6 @@ const MatchScore = () =>{
 
    const [scorePlayer1, setScorePlayer1] = useState(0);
    const [scorePlayer2, setScorePlayer2] = useState(0);
-
    const addScore1 = (event) =>{
       setScorePlayer1(scorePlayer1 + 1);
    }
@@ -80,6 +79,15 @@ const MatchScore = () =>{
               onClick={addScore2}>Add</button> 
             </div> 
         </div> 
+        <div className='div4'>
+         <button
+         onClick={() =>{
+            setScorePlayer1(0);
+            setScorePlayer2(0);
+         }}>
+            Reset
+         </button>
+        </div>
        </div> 
     )
 }
