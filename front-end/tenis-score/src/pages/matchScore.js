@@ -28,7 +28,7 @@ const MatchScore = () =>{
 
          return 30
 
-      }else if(score === 3){
+      }else if(score >= 3){
 
          return 40
 
@@ -36,15 +36,35 @@ const MatchScore = () =>{
          
          return 0
       }
+   }
 
+   const gameState = () =>{
+      if(scorePlayer1 >= 3 && scorePlayer1 === scorePlayer2){
+         return '¡Empate!'
+      }else if(scorePlayer1 === 3 && scorePlayer2 <=1){
+         return 'Ganador player 1'
+      }else if(scorePlayer2 === 3 && scorePlayer1 <= 1){
+         return 'Ganador player 2'
+      }else if(scorePlayer1 >= 4 && scorePlayer1 === scorePlayer2 + 1){
+         return 'Ventaja player 1'
+      }else if(scorePlayer2 >= 4 && scorePlayer2 === scorePlayer1 + 1){
+         return 'Ventaja player 2'
+      }else if(scorePlayer1 >= 4 && scorePlayer1 === scorePlayer2+2){
+         return 'Ganador player 1'
+      }else if(scorePlayer2 >=4 && scorePlayer2 === scorePlayer1+2){
+         return 'Ganador player 2'
+      }else{
+         return null
+      }
    }
     return(
        <div className = 'parent'>
         <div className = 'div1'>
-           <Title title = "Algo siuu"/> 
+           <Title title = 'Tennis match'/> 
+           <p>{gameState()}</p>
         </div>
         <div className = 'div2'>
-           <Player name = 'Rafa nadal'/> 
+           <Player name = 'Player1'/> 
            <Score score = {tenisScore(scorePlayer1)}/>
            <div>
            <button
@@ -53,7 +73,7 @@ const MatchScore = () =>{
            </div>
         </div>  
         <div className = 'div3'>
-            <Player name = 'Roger Federer'/> 
+            <Player name = 'Player2'/> 
             <Score score = {tenisScore(scorePlayer2)}/> 
             <div>
               <button
