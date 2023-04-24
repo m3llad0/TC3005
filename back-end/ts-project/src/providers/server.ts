@@ -1,4 +1,5 @@
 import express, {Request, Response } from "express";
+import db from '../models';
 
 class Server{
     private app : express.Application;
@@ -31,7 +32,17 @@ class Server{
         })
     }
 
-    public init(){
+    private async connectDB(){
+        try{
+            await db.sequelize.sync();
+            console.log('Connected to database')
+        }catch(err){
+            console.log(err);
+        }
+    }
+
+    public async init(){
+        await this.connectDB();
         this.app.listen(this.port, () => {
             console.log(`Server:: Running @'http://localhost:${this.port}'`)
         })
