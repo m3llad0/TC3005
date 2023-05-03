@@ -25,12 +25,16 @@ module.exports = (sequelize: any, DataTypes: any) => {
     role!: string;
     email!: string;
     static associate(models: any) {
+      User.belongsToMany(models.Project, {
+        through: 'ProjectUser'
+      });
     }
   }
   User.init({
     awsCognitoId: {
       type: DataTypes.STRING, 
       allowNull: false,
+      primaryKey: true
     },
     name: DataTypes.STRING,
     email: DataTypes.STRING,
