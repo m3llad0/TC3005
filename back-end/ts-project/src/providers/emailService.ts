@@ -1,5 +1,4 @@
 import nodemailer from 'nodemailer';
-import { EMAIL_HOST, EMAIL_PORT, USERNAME, PASSWORD } from '../config';
 import {MailOptions} from 'nodemailer/lib/json-transport';
 
 class MailService {
@@ -15,14 +14,14 @@ class MailService {
         username: string;
         password: string;
     }){
-        this.emailHost = EMAIL_HOST;
-        this.emailPort = EMAIL_PORT;
-        this.username = USERNAME;
-        this.password = PASSWORD;
+        this.emailHost = mailInit.emailHost;
+        this.emailPort = mailInit.emailPort;
+        this.username = mailInit.username;
+        this.password = mailInit.password;
         this.transporter = nodemailer.createTransport();
     }
 
-    private async createConnection(){
+    async createConnection(){
         this.transporter = nodemailer.createTransport({
             service: this.emailHost,
             port: this.emailPort,
