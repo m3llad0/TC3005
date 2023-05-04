@@ -3,22 +3,22 @@
 import {Model} from 'sequelize';
 
 interface ProjectUserAttributes{
-  Projectid:number,
-  Userid:String,
+  ProjectId:number,
+  Userid:string,
   budget:number
 }
 
 module.exports = (sequelize:any, DataTypes:any) => {
   class ProjectUser extends Model<ProjectUserAttributes> implements ProjectUserAttributes {
-    Projectid!:number;
-    Userid!:String;
+    ProjectId!:number;
+    Userid!:string;
     budget!:number;
     static associate(models:any) {
       // define association here
     }
   }
   ProjectUser.init({
-    Projectid:{
+    ProjectId:{
         type:DataTypes.INTEGER,
         allowNull:false,
         primaryKey:true,
