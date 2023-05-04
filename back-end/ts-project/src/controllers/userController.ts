@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import AbstractController from "./abstractController";
+import MailService from "../providers/emailService";
 
 class UserController extends AbstractController{
     protected validateBody(type: any) {
@@ -26,7 +27,15 @@ class UserController extends AbstractController{
     }
 
     private getReadUsers(req: Request, res: Response){
-        res.status(200).send({'message': 'Servicio de lectura de usuarios'});
+        const mailService = MailService.getInstance();
+
+        console.log(mailService.emailHost, mailService.emailPort, mailService.password)
+        mailService.sendMail({
+            to: "a01751694@tec.mx",
+            subject: "Mail sender",
+            html: '<h1>Hola</h1>'
+        });
+        res.status(200).send({'message': 'ok'});
     }
     
     private postNewUser(req: Request, res: Response){
