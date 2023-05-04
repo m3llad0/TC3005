@@ -1,7 +1,6 @@
 import express, {Request, Response } from "express";
 import db from '../models';
 import MailService from "./emailService";
-import { EMAIL_HOST, EMAIL_PORT, USERNAME, PASSWORD } from '../config';
 
 class Server{
     private app : express.Application;
@@ -45,12 +44,7 @@ class Server{
 
     public async init(){
         /*Created mail service instance*/
-        const mailService = new MailService({
-            emailHost: EMAIL_HOST,
-            emailPort: EMAIL_PORT,
-            username: USERNAME, 
-            password: PASSWORD
-        });
+        const mailService = MailService.getInstance();
         await this.connectDB();
         /*Connects to smtp provider*/
         await mailService.createConnection();
